@@ -9,6 +9,9 @@ export class ViewTrainComponent implements OnInit {
 
   constructor() { }
   name="Amal"
+  readValues=()=>{
+    this.name="raju"
+  }
 
   ngOnInit(): void {
   }
