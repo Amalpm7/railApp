@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-train',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewTrainComponent implements OnInit {
 
-  constructor() { }
-  name="Amal"
-  readValues=()=>{
-    this.name="raju"
+  constructor(private myapi:ApiService) { this.putData() }
+  putData=()=>{
+    this.myapi.getData().subscribe(
+      (data)=>{
+        this.viewTrain=data
+      }
+    )
   }
+  viewTrain:any=[]
+
 
   ngOnInit(): void {
   }
